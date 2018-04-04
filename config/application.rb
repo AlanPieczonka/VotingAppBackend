@@ -25,9 +25,9 @@ module BackendVotingApp
       allow do
         origins '*'
         resource '*',
-          :headers => :any,
-          :expose  => ['access-token', 'expiry', 'token-type', 'uid', 'client'],
-          :methods => [:get, :post, :options, :delete, :put]
+        :headers => :any,
+        :methods => [:get, :post, :options, :delete, :head, :patch],
+        :expose  => ['access-token', 'expiry', 'token-type', 'uid', 'client']
       end
     end
     config.api_only = true
